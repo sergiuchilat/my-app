@@ -1,43 +1,39 @@
 import React from "react";
 import ReactButton from "./ReactButton";
+import { Routes, Route, Link } from "react-router-dom";
 
-class NavBar extends React.Component{
+class NavBar extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.buttons = [
             {
                 id: 1,
                 label: "Home",
-            },
-            {
-                id: 2,
-                label: "Blog",
-            },
-            {
-                id: 3,
-                label: "Photos",
-            },
-            {
-                id: 4,
-                label: "Video",
+                url: "",
             },
             {
                 id: 5,
                 label: "About us",
+                url: "about",
             },
             {
                 id: 6,
                 label: "Contacts",
+                url: "contacts",
             }
         ]
     }
 
-    render(){
+    render() {
         return (
             <div>
                 {this.buttons.map((button) => {
-                    return <ReactButton key={button.id} label={button.label}></ReactButton>
+                    return (
+                        <Link to={button.url} key={button.id}>
+                            <ReactButton label={button.label}></ReactButton>
+                        </Link>
+                    )
                 })}
             </div>
         )

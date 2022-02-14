@@ -4,10 +4,9 @@ export default class extends React.Component {
     constructor() {
         super();
         this.state = {
-            name: "Ion",
-            phone: "112"
+            name: "",
+            phone: ""
         }
-
     }
 
     handleNameTextChange = (e) => {
